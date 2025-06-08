@@ -28,7 +28,7 @@ export function LoadingScreen() {
       <div className="text-center">
         <div className="mb-8">
           <div className="w-20 h-20 border-4 border-primary/20 border-t-primary rounded-full animate-spin mx-auto mb-4" />
-          <h2 className="text-2xl font-bold mb-2">John Developer</h2>
+          <h2 className="text-2xl font-bold mb-2">Tarun Gurugubelli</h2>
           <p className="text-muted-foreground">Loading Portfolio...</p>
         </div>
 

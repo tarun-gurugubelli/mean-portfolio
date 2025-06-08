@@ -8,7 +8,7 @@ interface TypingAnimationProps {
   speed?: number
 }
 
-export function TypingAnimation({ text, className = "", speed = 100 }: TypingAnimationProps) {
+export function TypingAnimation({ text, className = "", speed = 5000 }: TypingAnimationProps) {
   const [displayText, setDisplayText] = useState("")
   const [currentIndex, setCurrentIndex] = useState(0)
 

@@ -144,24 +144,27 @@ export default function Component() {
   const experience = [
     {
       title: "Senior Full Stack Developer",
-      company: "TechCorp Solutions",
-      period: "2023 - Present",
+      role: "Technology Analyst",
+      company: "at Infosys Ltd.",
+      period: "2025 - Present",
       description:
-        "Lead development of enterprise web applications using MEAN stack. Mentored junior developers and implemented CI/CD pipelines.",
+        "Driving end-to-end development of scalable MEAN stack applications with a focus on performance, reusability, and maintainability. Mentoring junior developers and collaborating across teams to deliver high-quality, production-ready solutions.",
     },
     {
       title: "Full Stack Developer",
-      company: "Digital Innovations Ltd",
-      period: "2022 - 2023",
+      role: "Senior Systems Engineer",
+      company: "at Infosys Ltd.",
+      period: "2023 - 2024",
       description:
-        "Developed and maintained multiple client projects using Angular, Node.js, and MongoDB. Improved application performance by 40%.",
+        "Led full-stack development efforts using Angular and Node.js, integrating APIs and ensuring responsive, accessible UI/UX across platforms. Actively contributed to Agile processes, documentation, and mentoring to support team productivity and code quality.",
     },
     {
-      title: "Junior Developer",
-      company: "StartupHub",
-      period: "2021 - 2022",
+      title: "Angular Developer",
+      role: "Systems Engineer",
+      company: "at Infosys Ltd.",
+      period: "2021 - 2023",
       description:
-        "Built responsive web applications and RESTful APIs. Collaborated with cross-functional teams in agile environment.",
+        "Built and maintained robust web applications with a focus on frontend responsiveness and backend reliability. Ensured smooth delivery through active involvement in Agile practices, API integrations, and continuous performance optimization.",
     },
   ]
 
@@ -181,7 +184,7 @@ export default function Component() {
         >
           <div className="container mx-auto px-4 py-4">
             <div className="flex justify-between items-center">
-              <div className="text-xl font-bold transition-all duration-300 hover:scale-105">John Developer</div>
+              <div className="text-xl font-bold transition-all duration-300 hover:scale-105">Tarun Gurugubelli</div>
 
               {/* Desktop Navigation */}
               <div className="hidden md:flex items-center space-x-6">
@@ -272,7 +275,7 @@ export default function Component() {
                 {/* <Hero3D /> */}
                 <div className="animate-in zoom-in duration-700 delay-200">
                   <Image
-                    src="/placeholder.svg?height=150&width=150"
+                    src="/tarun.png?height=150&width=150"
                     alt="Profile"
                     width={150}
                     height={150}
@@ -280,7 +283,7 @@ export default function Component() {
                   />
                 </div>
                 <h1 className="text-4xl md:text-6xl font-bold mb-4">
-                  <TypingAnimation text="John Developer" speed={150} />
+                  <TypingAnimation text="Tarun Gurugubelli  " speed={150} />
                 </h1>
                 <p className="text-xl md:text-2xl text-muted-foreground mb-6 animate-in slide-in-from-bottom duration-700 delay-1000">
                   Senior MEAN Stack Developer
@@ -290,30 +293,32 @@ export default function Component() {
                   MongoDB, Express.js, Angular, and Node.js. Specialized in creating efficient, user-friendly solutions
                   for complex business problems.
                 </p>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center animate-in slide-in-from-bottom duration-700 delay-1400">
-                  <Button size="lg" className="gap-2 transition-all duration-300 hover:scale-105 hover:shadow-lg">
-                    <Download className="w-4 h-4" />
-                    Download Resume
-                  </Button>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center animate-in slide-in-from-bottom duration-700 delay-1400">  
+                  <a href="/resume.pdf" target="_blank" >
+                    <Button size="lg" className="gap-2 transition-all duration-300 hover:scale-105 hover:shadow-lg">
+                      <Download className="w-4 h-4" />
+                      Download Resume
+                    </Button>
+                  </a>
                   <Button variant="outline" size="lg" asChild className="transition-all duration-300 hover:scale-105">
                     <Link href="#contact">Get In Touch</Link>
                   </Button>
                 </div>
-                <div className="flex justify-center space-x-6 animate-in slide-in-from-bottom duration-700 delay-1600">
+                <div className="flex justify-center space-x-6 pt-6 animate-in slide-in-from-bottom duration-700 delay-1600">
                   <Link
-                    href="#"
+                    href="https://github.com/tarun-gurugubelli" target="_blank"
                     className="text-muted-foreground hover:text-primary transition-all duration-300 hover:scale-125 hover:-translate-y-1"
                   >
                     <Github className="w-6 h-6" />
                   </Link>
                   <Link
-                    href="#"
+                    href="https://linkedin.com/in/tarun-gurugubelli" target="_blank"
                     className="text-muted-foreground hover:text-primary transition-all duration-300 hover:scale-125 hover:-translate-y-1"
                   >
                     <Linkedin className="w-6 h-6" />
                   </Link>
                   <Link
-                    href="#"
+                    href="mailto:tarungurugubelli@outlook.com?subject=Hello&body=I wanted to reach out..." target="_blank"
                     className="text-muted-foreground hover:text-primary transition-all duration-300 hover:scale-125 hover:-translate-y-1"
                   >
                     <Mail className="w-6 h-6" />
@@ -348,7 +353,7 @@ export default function Component() {
                     </div>
                     <div className="flex items-center gap-2">
                       <Users className="w-5 h-5 text-primary" />
-                      <span>15+ Projects Completed</span>
+                      <span>5+ Projects Completed</span>
                     </div>
                     <div className="flex items-center gap-2">
                       <Zap className="w-5 h-5 text-primary" />
@@ -369,8 +374,8 @@ export default function Component() {
                       </CardTitle>
                     </CardHeader>
                     <CardContent>
-                      <p className="font-semibold">Bachelor of Computer Science</p>
-                      <p className="text-muted-foreground">University of Technology • 2017-2021</p>
+                      <p className="font-semibold">Bachelor of Electronics and Communications</p>
+                      <p className="text-muted-foreground">JNTU - Kakinada • 2017-2021</p>
                     </CardContent>
                   </Card>
                   <Card className="transition-all duration-300 hover:scale-105 hover:shadow-lg">
@@ -381,8 +386,8 @@ export default function Component() {
                       </CardTitle>
                     </CardHeader>
                     <CardContent>
-                      <p>San Francisco, CA</p>
-                      <p className="text-muted-foreground">Open to remote opportunities</p>
+                      <p>Visakhapatnam, AP</p>
+                      <p className="text-muted-foreground">Open to opportunities</p>
                     </CardContent>
                   </Card>
                 </div>
@@ -469,7 +474,7 @@ export default function Component() {
         <section className="py-16 px-4 relative z-10">
           <div className="container mx-auto">
             <AnimatedSection>
-              <h2 className="text-3xl font-bold text-center mb-12">What Clients Say</h2>
+              <h2 className="text-3xl font-bold text-center mb-12">What Team Say</h2>
               <Testimonials />
             </AnimatedSection>
           </div>
@@ -497,6 +502,7 @@ export default function Component() {
                           <CardHeader>
                             <CardTitle>{exp.title}</CardTitle>
                             <CardDescription className="flex items-center gap-2">
+                              <span>{exp.role}</span>
                               <span>{exp.company}</span>
                               <Separator orientation="vertical" className="h-4" />
                               <span className="flex items-center gap-1">
@@ -533,15 +539,15 @@ export default function Component() {
                   <div className="space-y-4">
                     <div className="flex items-center gap-3">
                       <Mail className="w-5 h-5 text-primary" />
-                      <span>john.developer@email.com</span>
+                      <span>tarungurugubelli@outlook.com</span>
                     </div>
                     <div className="flex items-center gap-3">
                       <Phone className="w-5 h-5 text-primary" />
-                      <span>+1 (555) 123-4567</span>
+                      <span>+91 9515431388</span>
                     </div>
                     <div className="flex items-center gap-3">
                       <MapPin className="w-5 h-5 text-primary" />
-                      <span>San Francisco, CA</span>
+                      <span>Visakhapatnam, AP</span>
                     </div>
                   </div>
                 </div>
@@ -554,7 +560,7 @@ export default function Component() {
         {/* Footer */}
         <footer className="py-8 px-4 border-t relative z-10">
           <div className="container mx-auto text-center">
-            <p className="text-muted-foreground">© {new Date().getFullYear()} John Developer. All rights reserved.</p>
+            <p className="text-muted-foreground">© {new Date().getFullYear()} Tarun Gurugubelli. All rights reserved.</p>
           </div>
         </footer>
       </div>
