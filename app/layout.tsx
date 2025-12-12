@@ -8,7 +8,7 @@ const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
   title: "Tarun Gurugubelli - MEAN Stack Portfolio",
-  description: "Professional portfolio of Tarun Gurugubelli - Senior MEAN Stack Developer with 3+ years experience",
+  description: "Professional portfolio of Tarun Gurugubelli - Senior MEAN Stack Developer with 4+ years experience",
   generator: "v0.dev",
 }
 

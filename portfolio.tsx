@@ -289,7 +289,7 @@ export default function Component() {
                   Senior MEAN Stack Developer
                 </p>
                 <p className="text-lg max-w-2xl mx-auto mb-8 animate-in slide-in-from-bottom duration-700 delay-1200">
-                  Passionate full-stack developer with 3+ years of experience building scalable web applications using
+                  Passionate full-stack developer with 4+ years of experience building scalable web applications using
                   MongoDB, Express.js, Angular, and Node.js. Specialized in creating efficient, user-friendly solutions
                   for complex business problems.
                 </p>
@@ -338,7 +338,7 @@ export default function Component() {
                 <div>
                   <p className="text-lg mb-6">
                     I'm a dedicated MEAN stack developer with a passion for creating innovative web solutions. With over
-                    3 years of professional experience, I've successfully delivered numerous projects ranging from
+                    4+ years of professional experience, I've successfully delivered numerous projects ranging from
                     e-commerce platforms to enterprise applications.
                   </p>
                   <p className="text-lg mb-6">
@@ -349,7 +349,7 @@ export default function Component() {
                   <div className="grid grid-cols-2 gap-4">
                     <div className="flex items-center gap-2">
                       <Award className="w-5 h-5 text-primary" />
-                      <span>3+ Years Experience</span>
+                      <span>4+ Years Experience</span>
                     </div>
                     <div className="flex items-center gap-2">
                       <Users className="w-5 h-5 text-primary" />
