@@ -31,3 +31,4 @@ next-env.d.ts
 .env
 # Added by code-review-graph
 .code-review-graph/
+.DS_Store
