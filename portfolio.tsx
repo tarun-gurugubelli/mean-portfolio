@@ -11,8 +11,8 @@ import {
   Mail,
   Phone,
   MapPin,
-  Github,
-  Linkedin,
+  Code2,
+  BriefcaseBusiness,
   ExternalLink,
   Download,
   Calendar,
@@ -309,13 +309,13 @@ export default function Component() {
                     href="https://github.com/tarun-gurugubelli" target="_blank"
                     className="text-muted-foreground hover:text-primary transition-all duration-300 hover:scale-125 hover:-translate-y-1"
                   >
-                    <Github className="w-6 h-6" />
+                    <Code2 className="w-6 h-6" />
                   </Link>
                   <Link
                     href="https://linkedin.com/in/tarun-gurugubelli" target="_blank"
                     className="text-muted-foreground hover:text-primary transition-all duration-300 hover:scale-125 hover:-translate-y-1"
                   >
-                    <Linkedin className="w-6 h-6" />
+                    <BriefcaseBusiness className="w-6 h-6" />
                   </Link>
                   <Link
                     href="mailto:tarungurugubelli@outlook.com?subject=Hello&body=I wanted to reach out..." target="_blank"
@@ -450,7 +450,7 @@ export default function Component() {
                             className="transition-all duration-300 hover:scale-105"
                           >
                             <Link href={project.github} className="gap-2">
-                              <Github className="w-4 h-4" />
+                              <Code2 className="w-4 h-4" />
                               Code
                             </Link>
                           </Button>
