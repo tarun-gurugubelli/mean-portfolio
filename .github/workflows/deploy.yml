@@ -1,9 +1,9 @@
-name: Deploy to GitHub Pages
+name: Deploy Angular to GitHub Pages
 
 on:
   push:
     branches:
-      - main
+      - angular
   workflow_dispatch:
 
 permissions:
@@ -20,10 +20,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v5
+        uses: actions/checkout@v4
 
       - name: Setup Node
-        uses: actions/setup-node@v6
+        uses: actions/setup-node@v4
         with:
           node-version: 24
           cache: npm
@@ -31,13 +31,13 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Build static site
-        run: npm run build
+      - name: Build Angular app
+        run: npx ng build --configuration=production --base-href=/
 
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v4
+        uses: actions/upload-pages-artifact@v3
         with:
-          path: out
+          path: dist/angular-portfolio/browser
 
   deploy:
     environment:
