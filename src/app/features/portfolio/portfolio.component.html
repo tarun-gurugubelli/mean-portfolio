@@ -1,0 +1,319 @@
+<app-loading-screen></app-loading-screen>
+
+<div class="min-h-screen bg-background relative">
+  <app-particle-background></app-particle-background>
+  <app-scroll-progress></app-scroll-progress>
+
+  <!-- Navigation -->
+  <nav
+    [class]="isScrolled()
+      ? 'fixed top-1 w-full z-40 transition-all duration-300 bg-background/95 backdrop-blur-md border-b shadow-sm'
+      : 'fixed top-1 w-full z-40 transition-all duration-300 bg-background/80 backdrop-blur-sm'"
+  >
+    <div class="container mx-auto px-4 py-4">
+      <div class="flex justify-between items-center">
+        <div class="text-xl font-bold transition-all duration-300 hover:scale-105">Tarun Gurugubelli</div>
+
+        <!-- Desktop Nav -->
+        <div class="hidden md:flex items-center space-x-6">
+          <a (click)="scrollTo('about')" class="cursor-pointer hover:text-primary transition-all duration-300 hover:scale-105">About</a>
+          <a (click)="scrollTo('skills')" class="cursor-pointer hover:text-primary transition-all duration-300 hover:scale-105">Skills</a>
+          <a (click)="scrollTo('projects')" class="cursor-pointer hover:text-primary transition-all duration-300 hover:scale-105">Projects</a>
+          <a (click)="scrollTo('experience')" class="cursor-pointer hover:text-primary transition-all duration-300 hover:scale-105">Experience</a>
+          <a (click)="scrollTo('contact')" class="cursor-pointer hover:text-primary transition-all duration-300 hover:scale-105">Contact</a>
+          <app-theme-toggle></app-theme-toggle>
+        </div>
+
+        <!-- Mobile Nav Toggle -->
+        <div class="md:hidden flex items-center gap-2">
+          <app-theme-toggle></app-theme-toggle>
+          <button
+            (click)="toggleMenu()"
+            class="inline-flex items-center justify-center h-10 w-10 rounded-md hover:bg-accent hover:text-accent-foreground transition-all duration-300 hover:scale-110"
+          >
+            @if (isMobileMenuOpen()) {
+              <lucide-icon name="x" [size]="24"></lucide-icon>
+            } @else {
+              <lucide-icon name="menu" [size]="24"></lucide-icon>
+            }
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div
+        [class]="isMobileMenuOpen()
+          ? 'md:hidden transition-all duration-300 overflow-hidden max-h-64 opacity-100'
+          : 'md:hidden transition-all duration-300 overflow-hidden max-h-0 opacity-0'"
+      >
+        <div class="py-4 space-y-2 border-t mt-4">
+          <a (click)="scrollTo('about')" class="block py-2 cursor-pointer hover:text-primary transition-all duration-300 hover:translate-x-2">About</a>
+          <a (click)="scrollTo('skills')" class="block py-2 cursor-pointer hover:text-primary transition-all duration-300 hover:translate-x-2">Skills</a>
+          <a (click)="scrollTo('projects')" class="block py-2 cursor-pointer hover:text-primary transition-all duration-300 hover:translate-x-2">Projects</a>
+          <a (click)="scrollTo('experience')" class="block py-2 cursor-pointer hover:text-primary transition-all duration-300 hover:translate-x-2">Experience</a>
+          <a (click)="scrollTo('contact')" class="block py-2 cursor-pointer hover:text-primary transition-all duration-300 hover:translate-x-2">Contact</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="pt-20 pb-16 px-4 relative z-10">
+    <div class="container mx-auto text-center">
+      <div class="mb-8">
+        <div class="animate-in zoom-in duration-700">
+          <img
+            src="/tarun.png"
+            alt="Profile"
+            width="150" height="150"
+            class="rounded-full mx-auto mb-6 border-4 border-primary/20 transition-all duration-500 hover:scale-110 hover:border-primary/40 w-[150px] h-[150px] object-cover"
+          />
+        </div>
+        <h1 class="text-4xl md:text-6xl font-bold mb-4">
+          <app-typing-animation text="Tarun Gurugubelli  " [speed]="150"></app-typing-animation>
+        </h1>
+        <p class="text-xl md:text-2xl text-muted-foreground mb-6">Senior MEAN Stack Developer</p>
+        <p class="text-lg max-w-2xl mx-auto mb-8">
+          Passionate full-stack developer with 4+ years of experience building scalable web applications using
+          MongoDB, Express.js, Angular, and Node.js. Specialized in creating efficient, user-friendly solutions
+          for complex business problems.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="/resume.pdf" target="_blank">
+            <button class="inline-flex items-center justify-center gap-2 h-11 px-8 rounded-md bg-primary text-primary-foreground text-sm font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg hover:bg-primary/90">
+              <lucide-icon name="download" [size]="16"></lucide-icon>
+              Download Resume
+            </button>
+          </a>
+          <button
+            (click)="scrollTo('contact')"
+            class="inline-flex items-center justify-center h-11 px-8 rounded-md border border-input bg-background text-sm font-medium transition-all duration-300 hover:scale-105 hover:bg-accent hover:text-accent-foreground"
+          >
+            Get In Touch
+          </button>
+        </div>
+        <div class="flex justify-center space-x-6 pt-6">
+          <a href="https://github.com/tarun-gurugubelli" target="_blank"
+             class="text-muted-foreground hover:text-primary transition-all duration-300 hover:scale-125 hover:-translate-y-1">
+            <lucide-icon name="code-2" [size]="24"></lucide-icon>
+          </a>
+          <a href="https://linkedin.com/in/tarun-gurugubelli" target="_blank"
+             class="text-muted-foreground hover:text-primary transition-all duration-300 hover:scale-125 hover:-translate-y-1">
+            <lucide-icon name="briefcase-business" [size]="24"></lucide-icon>
+          </a>
+          <a href="mailto:tarungurugubelli@outlook.com?subject=Hello&body=I wanted to reach out..."
+             class="text-muted-foreground hover:text-primary transition-all duration-300 hover:scale-125 hover:-translate-y-1">
+            <lucide-icon name="mail" [size]="24"></lucide-icon>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="py-16 px-4 bg-muted/50 relative z-10">
+    <div class="container mx-auto">
+      <h2 class="text-3xl font-bold text-center mb-12">About Me</h2>
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div>
+          <p class="text-lg mb-6">
+            I'm a dedicated MEAN stack developer with a passion for creating innovative web solutions. With over
+            4+ years of professional experience, I've successfully delivered numerous projects ranging from
+            e-commerce platforms to enterprise applications.
+          </p>
+          <p class="text-lg mb-6">
+            My expertise lies in building scalable, maintainable applications using modern JavaScript
+            technologies. I enjoy working in collaborative environments and am always eager to learn new
+            technologies and best practices.
+          </p>
+          <div class="grid grid-cols-2 gap-4">
+            <div class="flex items-center gap-2">
+              <lucide-icon name="award" [size]="20" class="text-primary"></lucide-icon>
+              <span>4+ Years Experience</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <lucide-icon name="users" [size]="20" class="text-primary"></lucide-icon>
+              <span>5+ Projects Completed</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <lucide-icon name="zap" [size]="20" class="text-primary"></lucide-icon>
+              <span>Performance Optimization</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <lucide-icon name="server" [size]="20" class="text-primary"></lucide-icon>
+              <span>Full-Stack Development</span>
+            </div>
+          </div>
+        </div>
+        <div class="space-y-6">
+          <div class="rounded-lg border bg-card text-card-foreground shadow-sm transition-all duration-300 hover:scale-105 hover:shadow-lg">
+            <div class="flex flex-col space-y-1.5 p-6">
+              <div class="text-2xl font-semibold leading-none tracking-tight flex items-center gap-2">
+                <lucide-icon name="graduation-cap" [size]="20"></lucide-icon>
+                Education
+              </div>
+            </div>
+            <div class="p-6 pt-0">
+              <p class="font-semibold">Bachelor of Electronics and Communications</p>
+              <p class="text-muted-foreground">JNTU - Kakinada • 2017-2021</p>
+            </div>
+          </div>
+          <div class="rounded-lg border bg-card text-card-foreground shadow-sm transition-all duration-300 hover:scale-105 hover:shadow-lg">
+            <div class="flex flex-col space-y-1.5 p-6">
+              <div class="text-2xl font-semibold leading-none tracking-tight flex items-center gap-2">
+                <lucide-icon name="map-pin" [size]="20"></lucide-icon>
+                Location
+              </div>
+            </div>
+            <div class="p-6 pt-0">
+              <p>Visakhapatnam, AP</p>
+              <p class="text-muted-foreground">Open to opportunities</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="py-16 px-4 relative z-10">
+    <div class="container mx-auto">
+      <h2 class="text-3xl font-bold text-center mb-12">Technical Skills</h2>
+      <app-skills-proficiency></app-skills-proficiency>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="py-16 px-4 bg-muted/50 relative z-10">
+    <div class="container mx-auto">
+      <h2 class="text-3xl font-bold text-center mb-12">Featured Projects</h2>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        @for (project of projects; track project.title) {
+          <div class="rounded-lg border bg-card text-card-foreground shadow-sm overflow-hidden transition-all duration-500 hover:scale-105 hover:shadow-xl group flex flex-col">
+            <div class="aspect-video relative overflow-hidden bg-muted">
+              <img
+                [src]="project.image"
+                [alt]="project.title"
+                class="w-full h-full object-cover transition-all duration-500 group-hover:scale-110"
+              />
+              <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300"></div>
+            </div>
+            <div class="flex flex-col space-y-1.5 p-6">
+              <div class="text-2xl font-semibold leading-none tracking-tight group-hover:text-primary transition-colors duration-300">
+                {{ project.title }}
+              </div>
+              <div class="text-sm text-muted-foreground">{{ project.description }}</div>
+            </div>
+            <div class="p-6 pt-0 flex-1 flex flex-col justify-end">
+              <div class="flex flex-wrap gap-2 mb-4">
+                @for (tech of project.tech; track tech) {
+                  <span class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-all duration-300 hover:scale-110">
+                    {{ tech }}
+                  </span>
+                }
+              </div>
+              <div class="flex gap-2">
+                <a [href]="project.github"
+                   class="inline-flex items-center justify-center gap-2 h-9 px-3 rounded-md border border-input bg-background text-sm font-medium transition-all duration-300 hover:scale-105 hover:bg-accent hover:text-accent-foreground">
+                  <lucide-icon name="code-2" [size]="16"></lucide-icon>
+                  Code
+                </a>
+                <a [href]="project.live"
+                   class="inline-flex items-center justify-center gap-2 h-9 px-3 rounded-md bg-primary text-primary-foreground text-sm font-medium transition-all duration-300 hover:scale-105 hover:bg-primary/90">
+                  <lucide-icon name="external-link" [size]="16"></lucide-icon>
+                  Live Demo
+                </a>
+              </div>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="py-16 px-4 relative z-10">
+    <div class="container mx-auto">
+      <h2 class="text-3xl font-bold text-center mb-12">What Team Say</h2>
+      <app-testimonials></app-testimonials>
+    </div>
+  </section>
+
+  <!-- Experience Section -->
+  <section id="experience" class="py-16 px-4 relative z-10">
+    <div class="container mx-auto">
+      <h2 class="text-3xl font-bold text-center mb-12">Work Experience</h2>
+      <div class="max-w-3xl mx-auto">
+        @for (exp of experience; track exp.title; let i = $index) {
+          <div class="relative">
+            @if (!isLast(i)) {
+              <div class="absolute left-6 top-12 w-0.5 h-24 bg-border"></div>
+            }
+            <div class="flex gap-6 mb-8">
+              <div class="flex-shrink-0">
+                <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center">
+                  <lucide-icon name="building" [size]="24" class="text-primary-foreground"></lucide-icon>
+                </div>
+              </div>
+              <div class="rounded-lg border bg-card text-card-foreground shadow-sm flex-1 transition-all duration-300 hover:scale-105 hover:shadow-lg">
+                <div class="flex flex-col space-y-1.5 p-6">
+                  <div class="text-2xl font-semibold leading-none tracking-tight">{{ exp.title }}</div>
+                  <div class="text-sm text-muted-foreground flex flex-wrap items-center gap-2">
+                    <span>{{ exp.role }}</span>
+                    <span>{{ exp.company }}</span>
+                    <span class="w-px h-4 bg-border inline-block"></span>
+                    <span class="flex items-center gap-1">
+                      <lucide-icon name="calendar" [size]="16"></lucide-icon>
+                      {{ exp.period }}
+                    </span>
+                  </div>
+                </div>
+                <div class="p-6 pt-0">
+                  <p>{{ exp.description }}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-16 px-4 bg-muted/50 relative z-10">
+    <div class="container mx-auto">
+      <h2 class="text-3xl font-bold text-center mb-12">Get In Touch</h2>
+      <div class="grid md:grid-cols-2 gap-12 max-w-4xl mx-auto">
+        <div>
+          <h3 class="text-xl font-semibold mb-6">Let's work together</h3>
+          <p class="text-muted-foreground mb-8">
+            I'm always interested in new opportunities and exciting projects. Whether you have a project in mind
+            or just want to chat about technology, feel free to reach out!
+          </p>
+          <div class="space-y-4">
+            <div class="flex items-center gap-3">
+              <lucide-icon name="mail" [size]="20" class="text-primary"></lucide-icon>
+              <span>tarungurugubelli&#64;outlook.com</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <lucide-icon name="phone" [size]="20" class="text-primary"></lucide-icon>
+              <span>+91 9515431388</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <lucide-icon name="map-pin" [size]="20" class="text-primary"></lucide-icon>
+              <span>Visakhapatnam, AP</span>
+            </div>
+          </div>
+        </div>
+        <app-contact-form></app-contact-form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-8 px-4 border-t relative z-10">
+    <div class="container mx-auto text-center">
+      <p class="text-muted-foreground">© {{ currentYear }} Tarun Gurugubelli. All rights reserved.</p>
+    </div>
+  </footer>
+</div>

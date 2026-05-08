@@ -1,167 +1,59 @@
-# MEAN Stack Portfolio
+# AngularPortfolio
 
-A modern portfolio web application for Tarun Gurugubelli, built with Next.js, React, TypeScript, and Tailwind CSS. The site presents professional experience, technical skills, sample projects, testimonials, resume download, and a contact form in a responsive single-page layout.
+This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.0.5.
 
-Although the portfolio content highlights MEAN stack experience, this web application itself is a static Next.js frontend that can be deployed to any static hosting provider.
+## Development server
 
-## Web App Summary
-
-This portfolio includes:
-
-- Responsive landing page with hero, profile image, and quick contact links.
-- Sticky navigation with smooth section links and mobile menu.
-- Light/dark theme support.
-- Animated loading screen, scroll progress indicator, typing text, and particle background.
-- About, skills, projects, experience, testimonials, and contact sections.
-- Skills proficiency cards grouped by frontend, backend, database, and tools.
-- Contact form with client-side validation and simulated submission.
-- Static export configuration for simple deployment.
-
-## Tech Stack
-
-- **Framework:** Next.js 16
-- **UI Library:** React 19
-- **Language:** TypeScript
-- **Styling:** Tailwind CSS
-- **Theme Handling:** next-themes
-- **Icons:** lucide-react
-- **UI Primitives:** Radix UI Slot and Separator
-- **Utility Libraries:** clsx, class-variance-authority, tailwind-merge
-- **Build Output:** Static export through `next.config.mjs`
-
-## Main Modules And Components
-
-- `app/page.tsx` - App Router page entry that renders the portfolio.
-- `app/layout.tsx` - Root layout, metadata, and theme provider setup.
-- `portfolio.tsx` - Main single-page portfolio experience and page sections.
-- `components/contact-form.tsx` - Contact form, validation, status messages, and submit handling.
-- `components/skills-proficiency.tsx` - Animated skill proficiency cards.
-- `components/testimonials.tsx` - Testimonial carousel.
-- `components/theme-toggle.tsx` - Light/dark/system theme toggle.
-- `components/particle-background.tsx` - Animated canvas background.
-- `components/loading-screen.tsx` - Initial loading animation.
-- `components/scroll-progress.tsx` - Page scroll progress indicator.
-- `components/typing-animation.tsx` - Typing text animation used in the hero section.
-- `components/ui/*` - Reusable UI primitives such as buttons, cards, inputs, badges, alerts, and separators.
-- `hooks/use-intersection-observer.tsx` - Custom hook for scroll-triggered animations.
-- `public/*` - Static assets including profile images, placeholders, resume, and custom domain file.
-
-## Prerequisites
-
-Install the following before running the project:
-
-- Node.js 20 or newer
-- npm, pnpm, or another compatible Node package manager
-
-## Install Packages
-
-Using npm:
+To start a local development server, run:
 
 ```bash
-npm install
+ng serve
 ```
 
-Using pnpm:
+Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+
+## Code scaffolding
+
+Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
 
 ```bash
-pnpm install
+ng generate component component-name
 ```
 
-The repository includes both `package-lock.json` and `pnpm-lock.yaml`. Use one package manager consistently for local development.
-
-## Run Locally
-
-Start the development server:
+For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
 
 ```bash
-npm run dev
+ng generate --help
 ```
 
-Or with pnpm:
+## Building
+
+To build the project run:
 
 ```bash
-pnpm dev
+ng build
 ```
 
-Open the app in your browser:
+This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
 
-```text
-http://localhost:3000
-```
+## Running unit tests
 
-## Type Check
-
-The `lint` script runs TypeScript without emitting files:
+To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
 
 ```bash
-npm run lint
+ng test
 ```
 
-Or:
+## Running end-to-end tests
+
+For end-to-end (e2e) testing, run:
 
 ```bash
-pnpm lint
+ng e2e
 ```
 
-## Build
+Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
 
-Create a production build:
+## Additional Resources
 
-```bash
-npm run build
-```
-
-Or:
-
-```bash
-pnpm build
-```
-
-Because `next.config.mjs` uses `output: 'export'`, the production build is exported as static files in the `out/` directory.
-
-## Run Production Build Locally
-
-For a standard Next.js server build, the project includes:
-
-```bash
-npm run start
-```
-
-However, this project is configured for static export. After building, the most reliable way to preview the exported site is to serve the `out/` folder with any static file server, for example:
-
-```bash
-npx serve out
-```
-
-## Deployment
-
-Build the static site:
-
-```bash
-npm run build
-```
-
-Deploy the generated `out/` directory to any static hosting service.
-
-Common deployment options:
-
-- **GitHub Pages:** Publish the `out/` directory. The `public/CNAME` file is copied into the export for custom domain support.
-- **Netlify:** Set the build command to `npm run build` and the publish directory to `out`.
-- **Vercel:** Import the repository and use the Next.js defaults. The static export configuration will generate static assets.
-- **Static server/CDN:** Upload the contents of `out/` to your server, object storage bucket, or CDN.
-
-## Project Scripts
-
-| Script | Description |
-| --- | --- |
-| `npm run dev` | Starts the Next.js development server. |
-| `npm run build` | Builds and exports the static production site. |
-| `npm run start` | Starts the Next.js production server. |
-| `npm run lint` | Runs TypeScript checks with `tsc --noEmit`. |
-| `npm run export` | Alias for `next build`, also generating the static export. |
-
-## Notes
-
-- The contact form currently validates input on the client and simulates a successful submission. For production use, connect it to a service such as Formspree, Netlify Forms, EmailJS, or a custom API.
-- Images are configured as unoptimized in `next.config.mjs` so they work with static export.
-- The app uses path aliases through `@/*`, configured in `tsconfig.json`.
+For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
