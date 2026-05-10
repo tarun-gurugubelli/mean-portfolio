@@ -1,4 +1,4 @@
-import { Component, signal, OnInit, OnDestroy } from '@angular/core';
+import { Component, signal, output, OnInit, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LucideAngularModule } from 'lucide-angular';
 
@@ -15,6 +15,7 @@ const testimonials = [
   imports: [CommonModule, LucideAngularModule],
   template: `
     <div class="relative">
+      <!-- Carousel -->
       <div class="overflow-hidden">
         <div
           class="flex transition-transform duration-500 ease-in-out"
@@ -53,6 +54,7 @@ const testimonials = [
         </div>
       </div>
 
+      <!-- Controls -->
       <div class="flex justify-center items-center gap-4 mt-6">
         <button
           (click)="prev()"
@@ -80,12 +82,24 @@ const testimonials = [
           <lucide-icon name="chevron-right" [size]="16"></lucide-icon>
         </button>
       </div>
+
+      <!-- Register Testimonial Button -->
+      <div class="flex justify-center mt-10">
+        <button
+          (click)="openFormRequest.emit()"
+          class="inline-flex items-center justify-center gap-2 h-11 px-8 rounded-md bg-primary text-primary-foreground text-sm font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg hover:bg-primary/90"
+        >
+          <lucide-icon name="pen-line" [size]="16"></lucide-icon>
+          Register a Testimonial
+        </button>
+      </div>
     </div>
   `,
 })
 export class TestimonialsComponent implements OnInit, OnDestroy {
   testimonials = testimonials;
   currentIndex = signal(0);
+  openFormRequest = output<void>();
   private isAutoPlaying = true;
   private interval?: ReturnType<typeof setInterval>;
 

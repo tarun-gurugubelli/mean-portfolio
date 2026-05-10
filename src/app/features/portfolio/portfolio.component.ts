@@ -11,26 +11,33 @@ import { ParticleBackgroundComponent } from '../../shared/components/particle-ba
 import { LoadingScreenComponent } from '../../shared/components/loading-screen/loading-screen.component';
 import { SkillsProficiencyComponent } from './components/skills-proficiency/skills-proficiency.component';
 import { TestimonialsComponent } from './components/testimonials/testimonials.component';
+import { TestimonialFormComponent } from './components/testimonial-form/testimonial-form.component';
 import { ContactFormComponent } from './components/contact-form/contact-form.component';
 
-const PROJECTS = [
+const PROJECTS: { title: string; description: string; tech: string[]; github: string; live: string | null; image: string }[] = [
   {
-    title: 'E-Commerce Platform',
-    description: 'Full-stack e-commerce solution with Angular frontend, Node.js backend, and MongoDB database. Features include user authentication, payment integration, and admin dashboard.',
-    tech: ['Angular', 'Node.js', 'MongoDB', 'Express.js', 'Stripe API'],
-    github: '#', live: '#', image: '/placeholder.svg',
+    title: 'Codebase Assistant',
+    description: 'An AI-powered web application enabling users to upload GitHub repositories or ZIP files and ask natural language questions about codebases. The agent performs semantic search, reads files, executes code, and generates suggestions — all grounded in the actual source code.',
+    tech: ['Angular', 'Node.js', 'TypeScript', 'OpenAI GPT-4o', 'Pinecone', 'Express.js', 'Tailwind CSS'],
+    github: 'https://github.com/tarun-gurugubelli/codebase-assistant',
+    live: 'https://codeassist.tarun.win',
+    image: '/codebase-assistant.svg',
   },
   {
-    title: 'Task Management System',
-    description: 'Collaborative project management tool with real-time updates, file sharing, and team communication features built using MEAN stack.',
-    tech: ['Angular', 'Node.js', 'MongoDB', 'Socket.io', 'JWT'],
-    github: '#', live: '#', image: '/placeholder.svg',
+    title: 'Self Healing RAG',
+    description: 'A RAG system that automatically detects and corrects flawed answers by grading retrieved context, rewriting queries, and retrying up to 3 times — ensuring reliable, hallucination-free responses.',
+    tech: ['Python', 'LangChain', 'LangGraph', 'ChromaDB', 'Groq', 'HuggingFace'],
+    github: 'https://github.com/tarun-gurugubelli/self-healing-rag',
+    live: null,
+    image: '/self-healing-rag.svg',
   },
   {
-    title: 'Social Media Dashboard',
-    description: 'Analytics dashboard for social media management with data visualization, scheduled posting, and performance tracking.',
-    tech: ['React', 'Node.js', 'MongoDB', 'Chart.js', 'Express.js'],
-    github: '#', live: '#', image: '/placeholder.svg',
+    title: 'Dev-Ops Portfolio',
+    description: 'A static Next.js web application that collects DevOps learning resources in one place, featuring modules, FAQs, installation guides, and command cheatsheets for practical learning.',
+    tech: ['Next.js', 'TypeScript', 'React', 'Tailwind CSS', 'Radix UI', 'GitHub Actions'],
+    github: 'https://github.com/tarun-gurugubelli/devops-portfolio',
+    live: 'https://devops.tarun.win',
+    image: '/devops-portfolio.svg',
   },
 ];
 
@@ -71,6 +78,7 @@ const EXPERIENCE = [
     LoadingScreenComponent,
     SkillsProficiencyComponent,
     TestimonialsComponent,
+    TestimonialFormComponent,
     ContactFormComponent,
   ],
   templateUrl: './portfolio.component.html',
@@ -78,6 +86,7 @@ const EXPERIENCE = [
 export class PortfolioComponent {
   isMobileMenuOpen = signal(false);
   isScrolled = signal(false);
+  showTestimonialForm = signal(false);
 
   projects = PROJECTS;
   experience = EXPERIENCE;
@@ -103,5 +112,15 @@ export class PortfolioComponent {
 
   isLast(index: number): boolean {
     return index === this.experience.length - 1;
+  }
+
+  openTestimonialForm(): void {
+    this.showTestimonialForm.set(true);
+    document.body.style.overflow = 'hidden';
+  }
+
+  closeTestimonialForm(): void {
+    this.showTestimonialForm.set(false);
+    document.body.style.overflow = '';
   }
 }
