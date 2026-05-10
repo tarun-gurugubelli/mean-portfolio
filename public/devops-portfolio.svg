@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0c1a2e"/>
+      <stop offset="100%" style="stop-color:#1a0c2e"/>
+    </linearGradient>
+    <linearGradient id="glow1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f97316;stop-opacity:0.18"/>
+      <stop offset="100%" style="stop-color:#fb923c;stop-opacity:0.04"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#bg)"/>
+  <circle cx="950" cy="180" r="300" fill="url(#glow1)"/>
+  <circle cx="150" cy="520" r="180" fill="#f97316" opacity="0.05"/>
+
+  <!-- CI/CD Pipeline -->
+  <!-- Stage 1: Code -->
+  <rect x="80" y="220" width="130" height="120" rx="12" fill="#1e293b" stroke="#f97316" stroke-width="1.5"/>
+  <text x="145" y="270" text-anchor="middle" font-family="monospace" font-size="28" fill="#f97316">&lt;/&gt;</text>
+  <text x="145" y="300" text-anchor="middle" font-family="Inter,sans-serif" font-size="13" font-weight="600" fill="#f97316">Code</text>
+  <text x="145" y="320" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" fill="#94a3b8">Next.js</text>
+
+  <!-- Arrow -->
+  <line x1="210" y1="280" x2="260" y2="280" stroke="#f97316" stroke-width="2"/>
+  <polygon points="258,274 272,280 258,286" fill="#f97316"/>
+
+  <!-- Stage 2: Build -->
+  <rect x="272" y="220" width="130" height="120" rx="12" fill="#1e293b" stroke="#fb923c" stroke-width="1.5"/>
+  <text x="337" y="265" text-anchor="middle" font-family="monospace" font-size="26" fill="#fb923c">⚙</text>
+  <text x="337" y="298" text-anchor="middle" font-family="Inter,sans-serif" font-size="13" font-weight="600" fill="#fb923c">Build</text>
+  <text x="337" y="318" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" fill="#94a3b8">TypeScript</text>
+
+  <!-- Arrow -->
+  <line x1="402" y1="280" x2="452" y2="280" stroke="#fb923c" stroke-width="2"/>
+  <polygon points="450,274 464,280 450,286" fill="#fb923c"/>
+
+  <!-- Stage 3: Test -->
+  <rect x="464" y="220" width="130" height="120" rx="12" fill="#1e293b" stroke="#22c55e" stroke-width="1.5"/>
+  <text x="529" y="265" text-anchor="middle" font-family="monospace" font-size="26" fill="#22c55e">✓</text>
+  <text x="529" y="298" text-anchor="middle" font-family="Inter,sans-serif" font-size="13" font-weight="600" fill="#22c55e">Test</text>
+  <text x="529" y="318" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" fill="#94a3b8">GitHub Actions</text>
+
+  <!-- Arrow -->
+  <line x1="594" y1="280" x2="644" y2="280" stroke="#22c55e" stroke-width="2"/>
+  <polygon points="642,274 656,280 642,286" fill="#22c55e"/>
+
+  <!-- Stage 4: Deploy -->
+  <rect x="656" y="220" width="130" height="120" rx="12" fill="#1e293b" stroke="#6366f1" stroke-width="1.5"/>
+  <text x="721" y="265" text-anchor="middle" font-family="monospace" font-size="26" fill="#6366f1">▲</text>
+  <text x="721" y="298" text-anchor="middle" font-family="Inter,sans-serif" font-size="13" font-weight="600" fill="#6366f1">Deploy</text>
+  <text x="721" y="318" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" fill="#94a3b8">GitHub Pages</text>
+
+  <!-- Arrow -->
+  <line x1="786" y1="280" x2="836" y2="280" stroke="#6366f1" stroke-width="2"/>
+  <polygon points="834,274 848,280 834,286" fill="#6366f1"/>
+
+  <!-- Stage 5: Monitor -->
+  <rect x="848" y="220" width="130" height="120" rx="12" fill="#1e293b" stroke="#0ea5e9" stroke-width="1.5"/>
+  <text x="913" y="265" text-anchor="middle" font-family="monospace" font-size="26" fill="#0ea5e9">◉</text>
+  <text x="913" y="298" text-anchor="middle" font-family="Inter,sans-serif" font-size="13" font-weight="600" fill="#0ea5e9">Live</text>
+  <text x="913" y="318" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" fill="#94a3b8">devops.tarun.win</text>
+
+  <!-- Tech badges row -->
+  <rect x="200" y="400" width="110" height="30" rx="15" fill="#f97316" opacity="0.15" stroke="#f97316" stroke-width="1"/>
+  <text x="255" y="420" text-anchor="middle" font-family="Inter,sans-serif" font-size="12" fill="#fb923c">Tailwind CSS</text>
+  <rect x="330" y="400" width="90" height="30" rx="15" fill="#6366f1" opacity="0.15" stroke="#6366f1" stroke-width="1"/>
+  <text x="375" y="420" text-anchor="middle" font-family="Inter,sans-serif" font-size="12" fill="#818cf8">Radix UI</text>
+  <rect x="440" y="400" width="120" height="30" rx="15" fill="#22c55e" opacity="0.15" stroke="#22c55e" stroke-width="1"/>
+  <text x="500" y="420" text-anchor="middle" font-family="Inter,sans-serif" font-size="12" fill="#4ade80">GitHub Actions</text>
+  <rect x="580" y="400" width="80" height="30" rx="15" fill="#0ea5e9" opacity="0.15" stroke="#0ea5e9" stroke-width="1"/>
+  <text x="620" y="420" text-anchor="middle" font-family="Inter,sans-serif" font-size="12" fill="#38bdf8">Next.js</text>
+  <rect x="680" y="400" width="100" height="30" rx="15" fill="#8b5cf6" opacity="0.15" stroke="#8b5cf6" stroke-width="1"/>
+  <text x="730" y="420" text-anchor="middle" font-family="Inter,sans-serif" font-size="12" fill="#a78bfa">TypeScript</text>
+
+  <!-- Title -->
+  <text x="600" y="555" text-anchor="middle" font-family="Inter, sans-serif" font-size="28" font-weight="700" fill="white" opacity="0.9">Dev-Ops Portfolio</text>
+  <text x="600" y="590" text-anchor="middle" font-family="Inter, sans-serif" font-size="16" fill="#94a3b8">DevOps Learning &amp; Knowledge Hub</text>
+</svg>

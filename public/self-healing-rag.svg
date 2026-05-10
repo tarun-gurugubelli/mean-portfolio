@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a1628"/>
+      <stop offset="100%" style="stop-color:#0d2818"/>
+    </linearGradient>
+    <linearGradient id="glow1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981;stop-opacity:0.2"/>
+      <stop offset="100%" style="stop-color:#059669;stop-opacity:0.05"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#bg)"/>
+  <circle cx="300" cy="200" r="280" fill="url(#glow1)"/>
+  <circle cx="950" cy="500" r="220" fill="#10b981" opacity="0.06"/>
+  <!-- RAG Pipeline nodes -->
+  <!-- Node 1: Query -->
+  <rect x="100" y="260" width="140" height="60" rx="10" fill="#1e3a2e" stroke="#10b981" stroke-width="1.5"/>
+  <text x="170" y="285" text-anchor="middle" font-family="Inter,sans-serif" font-size="12" fill="#10b981">Query</text>
+  <text x="170" y="305" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" fill="#6ee7b7">Input</text>
+  <!-- Arrow -->
+  <line x1="240" y1="290" x2="310" y2="290" stroke="#10b981" stroke-width="2" stroke-dasharray="6,3"/>
+  <polygon points="310,285 322,290 310,295" fill="#10b981"/>
+  <!-- Node 2: Retriever -->
+  <rect x="322" y="260" width="140" height="60" rx="10" fill="#1e3a2e" stroke="#10b981" stroke-width="1.5"/>
+  <text x="392" y="285" text-anchor="middle" font-family="Inter,sans-serif" font-size="12" fill="#10b981">Retriever</text>
+  <text x="392" y="305" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" fill="#6ee7b7">ChromaDB</text>
+  <!-- Arrow -->
+  <line x1="462" y1="290" x2="532" y2="290" stroke="#10b981" stroke-width="2" stroke-dasharray="6,3"/>
+  <polygon points="532,285 544,290 532,295" fill="#10b981"/>
+  <!-- Node 3: Grader -->
+  <rect x="544" y="260" width="140" height="60" rx="10" fill="#1e3a2e" stroke="#f59e0b" stroke-width="1.5"/>
+  <text x="614" y="285" text-anchor="middle" font-family="Inter,sans-serif" font-size="12" fill="#f59e0b">Grader</text>
+  <text x="614" y="305" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" fill="#fcd34d">LLM Judge</text>
+  <!-- Arrow down (self-heal loop) -->
+  <line x1="614" y1="320" x2="614" y2="380" stroke="#ef4444" stroke-width="2" stroke-dasharray="6,3"/>
+  <polygon points="609,380 614,392 619,380" fill="#ef4444"/>
+  <!-- Retry node -->
+  <rect x="544" y="392" width="140" height="50" rx="10" fill="#2d1515" stroke="#ef4444" stroke-width="1.5"/>
+  <text x="614" y="413" text-anchor="middle" font-family="Inter,sans-serif" font-size="12" fill="#ef4444">Rewrite</text>
+  <text x="614" y="432" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" fill="#fca5a5">Self-Heal</text>
+  <!-- Loop back arrow -->
+  <path d="M544,417 Q440,417 440,290 Q440,265 462,265" stroke="#ef4444" stroke-width="1.5" stroke-dasharray="6,3" fill="none"/>
+  <polygon points="462,260 474,265 462,270" fill="#ef4444"/>
+  <!-- Arrow right from grader -->
+  <line x1="684" y1="290" x2="754" y2="290" stroke="#10b981" stroke-width="2" stroke-dasharray="6,3"/>
+  <polygon points="754,285 766,290 754,295" fill="#10b981"/>
+  <!-- Node 4: Generator -->
+  <rect x="766" y="260" width="140" height="60" rx="10" fill="#1e3a2e" stroke="#10b981" stroke-width="1.5"/>
+  <text x="836" y="285" text-anchor="middle" font-family="Inter,sans-serif" font-size="12" fill="#10b981">Generator</text>
+  <text x="836" y="305" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" fill="#6ee7b7">Llama 3.3</text>
+  <!-- Arrow -->
+  <line x1="906" y1="290" x2="976" y2="290" stroke="#10b981" stroke-width="2" stroke-dasharray="6,3"/>
+  <polygon points="976,285 988,290 976,295" fill="#10b981"/>
+  <!-- Node 5: Answer -->
+  <rect x="988" y="260" width="120" height="60" rx="10" fill="#1e3a2e" stroke="#10b981" stroke-width="1.5"/>
+  <text x="1048" y="285" text-anchor="middle" font-family="Inter,sans-serif" font-size="12" fill="#10b981">Answer</text>
+  <text x="1048" y="305" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" fill="#6ee7b7">Output</text>
+  <!-- Title -->
+  <text x="600" y="560" text-anchor="middle" font-family="Inter, sans-serif" font-size="28" font-weight="700" fill="white" opacity="0.9">Self Healing RAG</text>
+  <text x="600" y="595" text-anchor="middle" font-family="Inter, sans-serif" font-size="16" fill="#6ee7b7">Adaptive Retrieval-Augmented Generation</text>
+</svg>
